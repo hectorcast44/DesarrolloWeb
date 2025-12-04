@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Calzado Femenino | Margherita Italian Design</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Open+Sans:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Estilos Generales -->
+    <link rel="stylesheet" href="principal.css" />
+    <!-- Estilos Específicos de Calzado (Asegúrate que el archivo se llame así) -->
+    <link rel="stylesheet" href="calzadoMujer.css" />
+    <!-- Estilos Específicos para el carrito -->
+    <link rel="stylesheet" href="carrito.css" />
+  </head>
+  <body>
+    <!-- HEADER -->
+    <header class="main-header">
+      <div class="container">
+        <div class="header-content">
+          <a href="principal.html" class="logo-container">
+            <img src="logo.png" alt="Margherita Logo" class="main-logo" />
+          </a>
+          <nav class="main-nav">
+            <ul>
+              <li>
+                <!-- En tu Header -->
+                <a href="#" onclick="toggleCart()" class="cart-link">
+                  Carrito (<span id="cart-count">0</span>) 🛒
+                </a>
+              </li>
+              <li><a href="principal.html">Inicio</a></li>
+              <li><a href="calzado.html" class="active">Calzado</a></li>
+              <li><a href="mandala.html">Mandalas</a></li>
+              <li><a href="cuero.html">Cuero</a></li>
+              <li><a href="decoracion.html">Decoración</a></li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </header>
+
+    <!-- INTRODUCCIÓN -->
+    <section class="page-intro">
+      <div class="container">
+        <h1>Colección de Calzado</h1>
+        <p>Diseños exclusivos para cada paso.</p>
+        <div class="sub-nav">
+          <a href="#chanclas" class="pill-btn">Chanclas</a>
+          <a href="#sandalias" class="pill-btn">Sandalias</a>
+          <a href="#zapatillas" class="pill-btn">Zapatillas</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECCIÓN 1: CHANCLAS & PLAYERAS -->
+    <section id="chanclas" class="product-section">
+      <div class="container">
+        <h2 class="category-title">Chanclas & Playeras</h2>
+        <div class="shoes-grid">
+          <!-- Modelo 1 -->
+          <article class="shoe-card">
+            <div class="shoe-img">
+              <img src="chanclasNegras.jpeg" alt="Chancla Modelo Verano" />
+            </div>
+            <div class="shoe-info">
+              <h3>Chancla "Capri"</h3>
+              <p class="price">$450.00</p>
+              <div class="shoe-controls">
+                <div class="control-group">
+                  <label>Color:</label>
+                  <select>
+                    <option>Negro</option>
+                    <option>Dorado</option>
+                    <option>Blanco</option>
+                  </select>
+                </div>
+                <div class="control-group">
+                  <label>Talla:</label>
+                  <select>
+                    <option>23</option>
+                    <option>24</option>
+                    <option>25</option>
+                    <option>26</option>
+                  </select>
+                </div>
+                <div class="control-group">
+                  <label>Cant:</label>
+                  <input type="number" min="1" value="1" />
+                </div>
+              </div>
+              <button class="btn btn-primary btn-full">
+                Añadir al Carrito
+              </button>
+            </div>
+          </article>
+
+          <!-- Modelo 2 -->
+          <article class="shoe-card">
+            <div class="shoe-img">
+              <img src="chanclasDiamantes.jpeg" alt="Modelo 2" />
+            </div>
+            <div class="shoe-info">
+              <h3>Chancla "Sicilia"</h3>
+              <p class="price">$480.00</p>
+              <div class="shoe-controls">
+                <div class="control-group">
+                  <label>Color:</label>
+                  <select>
+                    <option>azul</option>
+                    <option>rojo</option>
+                  </select>
+                </div>
+                <div class="control-group">
+                  <label>Talla:</label>
+                  <select>
+                    <option>23</option>
+                    <option>24</option>
+                    <option>25</option>
+                  </select>
+                </div>
+                <div class="control-group">
+                  <label>Cant:</label>
+                  <input type="number" min="1" value="1" />
+                </div>
+              </div>
+              <button class="btn btn-primary btn-full">
+                Añadir al Carrito
+              </button>
+            </div>
+          </article>
+
+          <!-- Modelo 3 -->
+          <article class="shoe-card">
+            <div class="shoe-img">
+              <img src="chanclasCorazon.jpeg" alt="Modelo 3" />
+            </div>
+            <div class="shoe-info">
+              <h3>Chancla "Roma"</h3>
+              <p class="price">$420.00</p>
+              <div class="shoe-controls">
+                <div class="control-group">
+                  <label>Color:</label>
+                  <select>
+                    <option>blanco</option>
+                    <option>negro</option>
+                  </select>
+                </div>
+                <div class="control-group">
+                  <label>Talla:</label>
+                  <select>
+                    <option>23</option>
+                    <option>24</option>
+                  </select>
+                </div>
+                <div class="control-group">
+                  <label>Cant:</label>
+                  <input type="number" min="1" value="1" />
+                </div>
+              </div>
+              <button class="btn btn-primary btn-full">
+                Añadir al Carrito
+              </button>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECCIÓN 2: SANDALIAS DE DISEÑO -->
+    <section id="sandalias" class="product-section bg-secondary">
+      <div class="container">
+        <h2 class="category-title">Sandalias de Diseño</h2>
+        <div class="shoes-grid">
+          <!-- Sandalia 1 -->
+          <article class="shoe-card">
+            <div class="shoe-img">
+              <!-- Reemplaza con tu imagen -->
+              <img
+                src="sandaliaBlanco.jpeg"
+                alt="Sandalia Romana"
+                onerror="this.style.display='none';this.parentElement.innerText='(Foto Sandalia 1)'"
+              />
+            </div>
+            <div class="shoe-info">
+              <h3>Sandalia Romana</h3>
+              <p class="price">$650.00</p>
+              <div class="shoe-controls">
+                <div class="control-group">
+                  <label>Color:</label>
+                  <select>
+                    <option>platino</option>
+                    <option>Negro</option>
+                  </select>
+                </div>
+                <div class="control-group">
+                  <label>Talla:</label>
+                  <select>
+                    <option>23</option>
+                    <option>24</option>
+                    <option>25</option>
+                    <option>26</option>
+                  </select>
+                </div>
+                <div class="control-group">
+                  <label>Cant:</label>
+                  <input type="number" min="1" value="1" />
+                </div>
+              </div>
+              <button class="btn btn-primary btn-full">
+                Añadir al Carrito
+              </button>
+            </div>
+          </article>
+
+          <!-- Sandalia 2 -->
+          <article class="shoe-card">
+            <div class="shoe-img">
+              <img
+                src="sandaliaCafe.jpeg"
+                alt="Sandalia Plataforma"
+                onerror="this.style.display='none';this.parentElement.innerText='(Foto Sandalia 2)'"
+              />
+            </div>
+            <div class="shoe-info">
+              <h3>Sandalia Plataforma</h3>
+              <p class="price">$720.00</p>
+              <div class="shoe-controls">
+                <div class="control-group">
+                  <label>Color:</label>
+                  <select>
+                    <option>café</option>
+                    <option>Blanco</option>
+                  </select>
+                </div>
+                <div class="control-group">
+                  <label>Talla:</label>
+                  <select>
+                    <option>23</option>
+                    <option>24</option>
+                    <option>25</option>
+                  </select>
+                </div>
+                <div class="control-group">
+                  <label>Cant:</label>
+                  <input type="number" min="1" value="1" />
+                </div>
+              </div>
+              <button class="btn btn-primary btn-full">
+                Añadir al Carrito
+              </button>
+            </div>
+          </article>
+
+          <!-- Sandalia 3 -->
+          <article class="shoe-card">
+            <div class="shoe-img">
+              <img
+                src="sandaliaNegro.jpg"
+                alt="Sandalia Tiras"
+                onerror="this.style.display='none';this.parentElement.innerText='(Foto Sandalia 3)'"
+              />
+            </div>
+            <div class="shoe-info">
+              <h3>Sandalia de Tiras</h3>
+              <p class="price">$580.00</p>
+              <div class="shoe-controls">
+                <div class="control-group">
+                  <label>Color:</label>
+                  <select>
+                    <option>Dorado</option>
+                    <option>Plata</option>
+                  </select>
+                </div>
+                <div class="control-group">
+                  <label>Talla:</label>
+                  <select>
+                    <option>23</option>
+                    <option>24</option>
+                    <option>25</option>
+                    <option>26</option>
+                  </select>
+                </div>
+                <div class="control-group">
+                  <label>Cant:</label>
+                  <input type="number" min="1" value="1" />
+                </div>
+              </div>
+              <button class="btn btn-primary btn-full">
+                Añadir al Carrito
+              </button>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECCIÓN 3: ZAPATILLAS & SNEAKERS -->
+    <section id="zapatillas" class="product-section">
+      <div class="container">
+        <h2 class="category-title">Zapatillas con tacones</h2>
+        <div class="shoes-grid">
+          <!-- Zapatilla 1 -->
+          <article class="shoe-card">
+            <div class="shoe-img">
+              <img
+                src="taconesBoda.jpeg"
+                alt="Sneaker Urbano"
+                onerror="this.style.display='none';this.parentElement.innerText='(Foto Zapatilla 1)'"
+              />
+            </div>
+            <div class="shoe-info">
+              <h3>tacones boda</h3>
+              <p class="price">$890.00</p>
+              <div class="shoe-controls">
+                <div class="control-group">
+                  <label>Color:</label>
+                  <select>
+                    <option>vino</option>
+                    <option>Rosa</option>
+                  </select>
+                </div>
+                <div class="control-group">
+                  <label>Talla:</label>
+                  <select>
+                    <option>23</option>
+                    <option>24</option>
+                    <option>25</option>
+                    <option>26</option>
+                  </select>
+                </div>
+                <div class="control-group">
+                  <label>Cant:</label>
+                  <input type="number" min="1" value="1" />
+                </div>
+              </div>
+              <button class="btn btn-primary btn-full">
+                Añadir al Carrito
+              </button>
+            </div>
+          </article>
+
+          <!-- Zapatilla 2 -->
+          <article class="shoe-card">
+            <div class="shoe-img">
+              <img
+                src="taconMoño.jpeg"
+                alt="Tenis Running"
+                onerror="this.style.display='none';this.parentElement.innerText='(Foto Zapatilla 2)'"
+              />
+            </div>
+            <div class="shoe-info">
+              <h3>Tacones moño</h3>
+              <p class="price">$950.00</p>
+              <div class="shoe-controls">
+                <div class="control-group">
+                  <label>Color:</label>
+                  <select>
+                    <option>Negro</option>
+                    <option>Gris</option>
+                  </select>
+                </div>
+                <div class="control-group">
+                  <label>Talla:</label>
+                  <select>
+                    <option>23</option>
+                    <option>24</option>
+                    <option>25</option>
+                  </select>
+                </div>
+                <div class="control-group">
+                  <label>Cant:</label>
+                  <input type="number" min="1" value="1" />
+                </div>
+              </div>
+              <button class="btn btn-primary btn-full">
+                Añadir al Carrito
+              </button>
+            </div>
+          </article>
+
+          <!-- Zapatilla 3 -->
+          <article class="shoe-card">
+            <div class="shoe-img">
+              <img
+                src="taconCinturon.jpeg"
+                alt="Zapatilla Casual"
+                onerror="this.style.display='none';this.parentElement.innerText='(Foto Zapatilla 3)'"
+              />
+            </div>
+            <div class="shoe-info">
+              <h3>tacones cinturon</h3>
+              <p class="price">$780.00</p>
+              <div class="shoe-controls">
+                <div class="control-group">
+                  <label>Color:</label>
+                  <select>
+                    <option>morado</option>
+                    <option>Blanco</option>
+                  </select>
+                </div>
+                <div class="control-group">
+                  <label>Talla:</label>
+                  <select>
+                    <option>23</option>
+                    <option>24</option>
+                    <option>25</option>
+                    <option>26</option>
+                  </select>
+                </div>
+                <div class="control-group">
+                  <label>Cant:</label>
+                  <input type="number" min="1" value="1" />
+                </div>
+              </div>
+              <button class="btn btn-primary btn-full">
+                Añadir al Carrito
+              </button>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+    <!-- === INICIO DEL CARRITO === -->
+
+    <!-- Fondo oscuro -->
+    <div class="cart-overlay" id="cartOverlay" onclick="toggleCart()"></div>
+
+    <!-- Panel lateral -->
+    <aside class="cart-sidebar" id="cartSidebar">
+      <!-- Encabezado -->
+      <div class="cart-header">
+        <h2>Tu compra</h2>
+        <button class="close-cart-btn" onclick="toggleCart()">&times;</button>
+      </div>
+
+      <!-- Pestañas -->
+      <div class="cart-tabs">
+        <button class="tab active">Tienda</button>
+      </div>
+
+      <!-- Contenedor DINÁMICO de Items -->
+      <!-- Aquí es donde tu JS inyectará los productos -->
+      <div class="cart-items-container" id="cart-items-container">
+        <!-- Mensaje por defecto (JS debe mostrarlo si length === 0) -->
+        <p class="empty-cart-msg" style="display: block">
+          Tu carrito está vacío.
+        </p>
+
+        <!-- 
+           --- PLANTILLA DE REFERENCIA PARA JAVASCRIPT ---
+           Cuando agregues un producto con JS, genera este HTML:
+           
+        <div class="cart-item" data-id="ID_UNICO">
+            <div class="item-image">
+                <img src="RUTA_IMAGEN" alt="NOMBRE">
+            </div>
+            <div class="item-details">
+                <span class="brand">MARGHERITA</span>
+                <h4 class="item-name">NOMBRE DEL PRODUCTO</h4>
+                <p class="item-variant">Talla: X | Color: Y</p>
+                <p class="item-price">$PRECIO</p>
+                <div class="item-controls">
+                    <div class="qty-selector">
+                        <button class="qty-btn" onclick="updateQty('ID', -1)">-</button>
+                        <input type="text" value="CANTIDAD" readonly>
+                        <button class="qty-btn" onclick="updateQty('ID', 1)">+</button>
+                    </div>
+                </div>
+            </div>
+            <button class="delete-btn" onclick="removeItem('ID')">&times;</button>
+        </div>
+        -->
+      </div>
+
+      <!-- Pie del Carrito -->
+      <div class="cart-footer">
+        <div class="summary-row">
+          <span>Sub total</span>
+          <!-- ID para actualizar subtotal -->
+          <span id="cart-subtotal">$0.00</span>
+        </div>
+        <div class="summary-row">
+          <span>Envío</span>
+          <span class="free-shipping">Gratis</span>
+        </div>
+        <div class="summary-row total">
+          <span>TOTAL</span>
+          <!-- ID para actualizar total final -->
+          <span id="cart-total">$0.00</span>
+        </div>
+
+        <button class="btn-checkout" onclick="alert('Ir a pagar...')">
+          FINALIZAR COMPRA
+        </button>
+      </div>
+    </aside>
+
+    <script>
+      // Lógica básica solo para abrir/cerrar visualmente
+      function toggleCart() {
+        const sidebar = document.getElementById("cartSidebar");
+        const overlay = document.getElementById("cartOverlay");
+        sidebar.classList.toggle("open");
+        overlay.classList.toggle("open");
+      }
+    </script>
+
+    <!-- === FIN DEL CARRITO === -->
+    <!-- FOOTER -->
+    <footer class="main-footer">
+      <div class="container">
+        <p style="text-align: center; color: white">
+          &copy; 2023 Margherita Italian Design
+        </p>
+      </div>
+    </footer>
+  </body>
+</html>

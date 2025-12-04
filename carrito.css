@@ -1,0 +1,251 @@
+/* --- ESTILOS DEL CARRITO DESLIZANTE --- */
+
+/* Fondo oscuro (Overlay) */
+.cart-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 1001; /* Por encima del header */
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+}
+
+.cart-overlay.open {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* Panel Lateral (Sidebar) */
+.cart-sidebar {
+  position: fixed;
+  top: 0;
+  right: -400px; /* Oculto a la derecha */
+  width: 100%;
+  max-width: 400px; /* Ancho similar a la foto */
+  height: 100%;
+  background-color: white;
+  z-index: 1002;
+  box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
+  transition: right 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  display: flex;
+  flex-direction: column;
+  font-family: "Open Sans", sans-serif;
+}
+
+.cart-sidebar.open {
+  right: 0; /* Se desliza hacia adentro */
+}
+
+/* Encabezado */
+.cart-header {
+  padding: 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #eee;
+}
+
+.cart-header h2 {
+  font-family: "Montserrat", sans-serif;
+  font-size: 1.2rem;
+  color: #333;
+  margin: 0;
+}
+
+.close-cart-btn {
+  background: none;
+  border: none;
+  font-size: 2rem;
+  line-height: 1;
+  color: #666;
+  cursor: pointer;
+}
+
+/* Pestañas (Estilo visual) */
+.cart-tabs {
+  display: flex;
+  background-color: #f9f9f9;
+  padding: 10px 1.5rem 0;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.cart-tabs .tab {
+  background: #555; /* Color gris oscuro como en la foto */
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-size: 0.9rem;
+  border-radius: 4px 4px 0 0;
+  cursor: default;
+}
+
+/* Contenedor de Items (Scrollable) */
+.cart-items-container {
+  flex-grow: 1;
+  overflow-y: auto;
+  padding: 1.5rem;
+  background-color: #fdfdfd;
+}
+
+/* Item Individual */
+.cart-item {
+  display: flex;
+  background: white;
+  border: 1px solid #eee;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  border-radius: 4px;
+  position: relative;
+  gap: 15px;
+}
+
+.item-image {
+  width: 70px;
+  height: 70px;
+  background-color: #eee;
+  border-radius: 4px;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.item-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.item-details {
+  flex-grow: 1;
+}
+
+.item-details .brand {
+  font-size: 0.7rem;
+  color: #999;
+  text-transform: uppercase;
+  display: block;
+  margin-bottom: 2px;
+}
+
+.item-details .item-name {
+  font-size: 0.95rem;
+  color: #333;
+  margin: 0 0 5px 0;
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+.item-details .item-variant {
+  font-size: 0.8rem;
+  color: #777;
+  margin-bottom: 5px;
+}
+
+.item-details .item-price {
+  font-size: 1rem;
+  font-weight: bold;
+  color: #333;
+  margin-top: 5px;
+}
+
+/* Controles de Cantidad */
+.item-controls {
+  margin-top: 10px;
+  display: flex;
+  align-items: center;
+}
+
+.qty-selector {
+  display: flex;
+  border: 1px solid #ddd;
+  border-radius: 3px;
+}
+
+.qty-btn {
+  background: #f5f5f5;
+  border: none;
+  width: 25px;
+  height: 25px;
+  cursor: pointer;
+  font-weight: bold;
+  color: #555;
+}
+
+.qty-selector input {
+  width: 30px;
+  text-align: center;
+  border: none;
+  border-left: 1px solid #ddd;
+  border-right: 1px solid #ddd;
+  font-size: 0.9rem;
+}
+
+/* Botón Eliminar */
+.delete-btn {
+  position: absolute;
+  bottom: 1rem;
+  right: 1rem;
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  color: #999;
+  cursor: pointer;
+  line-height: 1;
+}
+
+.delete-btn:hover {
+  color: #d32f2f;
+}
+
+/* Pie de Página (Totales) */
+.cart-footer {
+  padding: 1.5rem;
+  background-color: white;
+  border-top: 1px solid #eee;
+  box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.summary-row {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 0.8rem;
+  font-size: 0.95rem;
+  color: #666;
+}
+
+.free-shipping {
+  color: #2e7d32; /* Verde éxito */
+  font-weight: 600;
+}
+
+.summary-row.total {
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 1px solid #eee;
+  font-size: 1.2rem;
+  font-weight: 800;
+  color: #333;
+}
+
+/* Botón Finalizar */
+.btn-checkout {
+  width: 100%;
+  background-color: #333; /* Oscuro como en la foto */
+  color: white;
+  border: none;
+  padding: 15px;
+  font-size: 1rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-top: 1rem;
+  transition: background 0.3s;
+}
+
+.btn-checkout:hover {
+  background-color: var(--primary-color); /* Tu verde corporativo */
+}
