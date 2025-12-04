@@ -1,0 +1,194 @@
+/* --- ESTILOS ESPECÍFICOS PARA PÁGINA DE DECORACIÓN --- */
+
+/* Fondo específico para la intro de decoración */
+.page-intro.deco-intro {
+  background-color: #f0f4f8; /* Un tono gris azulado muy claro y moderno */
+  padding: 3rem 0 2rem;
+  text-align: center;
+  border-bottom: 1px solid #dce3e8;
+}
+
+.page-intro h1 {
+  margin-bottom: 0.5rem;
+  color: var(--primary-color);
+}
+
+/* Navegación (Estilo compartido) */
+.sub-nav {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.pill-btn {
+  padding: 8px 20px;
+  border: 1px solid var(--primary-color);
+  border-radius: 50px;
+  color: var(--primary-color);
+  font-weight: 600;
+  font-size: 0.9rem;
+  background: white;
+  transition: all 0.3s ease;
+}
+
+.pill-btn:hover {
+  background: var(--primary-color);
+  color: white;
+}
+
+/* Secciones Generales */
+.product-section {
+  padding: 60px 0;
+  border-bottom: 1px solid #eee;
+}
+
+.category-title {
+  text-align: left;
+  margin-bottom: 2rem;
+  padding-left: 1rem;
+  border-left: 4px solid #5a7d8b; /* Un tono azul grisáceo para deco */
+}
+
+/* --- GRID DE DECORACIÓN --- */
+.deco-grid {
+  display: grid;
+  grid-template-columns: repeat(
+    auto-fill,
+    minmax(300px, 1fr)
+  ); /* Tarjetas un poco más anchas */
+  gap: 3rem;
+}
+
+/* --- TARJETA DE PRODUCTO DECO --- */
+.deco-card {
+  background: white;
+  border: 1px solid #eee;
+  border-radius: 8px;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.deco-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  border-color: var(--primary-color);
+}
+
+.card-img {
+  height: 300px; /* Altura generosa para ver detalles de arte */
+  background-color: #f9f9f9;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.card-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.deco-card:hover .card-img img {
+  transform: scale(1.03);
+}
+
+.card-info {
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.card-info h3 {
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+  color: var(--text-dark);
+}
+
+.card-info .price {
+  font-size: 1.3rem;
+  color: var(--primary-color);
+  font-weight: 700;
+  margin-bottom: 0.2rem;
+  display: flex;
+  align-items: baseline;
+  gap: 5px;
+}
+
+.price-note {
+  font-size: 0.8rem;
+  font-weight: 400;
+  color: #888;
+}
+
+.card-info .description {
+  font-size: 0.95rem;
+  color: #555;
+  margin-bottom: 0.5rem;
+  line-height: 1.5;
+}
+
+/* Nota especial de personalización */
+.custom-note {
+  font-size: 0.85rem;
+  color: #d97706; /* Un tono ámbar/naranja para llamar la atención */
+  font-weight: 600;
+  font-style: italic;
+  margin-bottom: 1.5rem;
+  margin-top: auto; /* Empuja hacia abajo si hay espacio */
+}
+
+/* Controles de compra */
+.purchase-controls {
+  padding-top: 1rem;
+  border-top: 1px solid #f0f0f0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.qty-group {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.qty-group label {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #555;
+}
+
+.qty-group input {
+  width: 60px;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  text-align: center;
+}
+
+.btn-full {
+  width: 100%;
+  padding: 12px;
+  text-transform: uppercase;
+  font-size: 0.9rem;
+  font-weight: 700;
+  cursor: pointer;
+  border-radius: 4px;
+  border: none;
+  transition: background 0.3s;
+  background-color: var(--primary-color);
+  color: white;
+}
+
+.btn-full:hover {
+  background-color: #123528;
+}
