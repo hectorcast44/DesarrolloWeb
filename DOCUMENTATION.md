@@ -68,3 +68,8 @@ El esquema incluye:
 - **Vista:** `vista_alumnos_info` para consultas simplificadas.
 - **Procedimiento:** `sp_crear_alumno` para inserciones controladas.
 - **Trigger:** `after_alumno_insert` para auditoría.
+
+## Video de demostración
+
+El enlace a nuestro video:
+https://www.youtube.com/watch?v=6GwDZ7KeiJs
