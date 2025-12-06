@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - Sistema Escolar</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div style="float: left;">
+                <h1>Sistema Escolar</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li>Bienvenido, <span id="user-display"></span></li>
+                    <li><a href="#" onclick="logout()">Cerrar Sesión</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <div class="container">
+        <!-- API 2: Quote of the Day -->
+        <div id="quote-box" class="quote-container" style="display: none;">
+            <span id="quote-text" class="quote-text">Cargando frase...</span>
+            <span id="quote-author" class="quote-author"></span>
+        </div>
+
+        <div style="margin-top: 20px; display: flex; justify-content: space-between; align-items: center;" id="search-bar">
+            <div>
+                <button class="btn" onclick="openModal()">Agregar Alumno</button>
+                <button class="btn" onclick="window.print()">Imprimir Reporte</button>
+            </div>
+            <div>
+                <input type="text" id="searchInput" placeholder="Buscar por nombre o email..." onkeyup="searchStudents()" style="padding: 10px; width: 300px;">
+            </div>
+        </div>
+
+        <table id="studentsTable">
+            <thead>
+                <tr>
+                    <th>Foto</th>
+                    <th>Nombre</th>
+                    <th>Email</th>
+                    <th>Carrera</th>
+                    <th class="actions-col">Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Dynamic Content -->
+            </tbody>
+        </table>
+    </div>
+
+    <!-- Modal -->
+    <div id="studentModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <h2 id="modalTitle">Agregar Alumno</h2>
+            <form id="studentForm">
+                <input type="hidden" id="studentId" name="id">
+                <div class="form-group">
+                    <label for="nombre">Nombre</label>
+                    <input type="text" id="nombre" name="nombre" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="carrera">Carrera</label>
+                    <select id="carrera" name="carrera_id" required>
+                        <!-- Dynamic Options -->
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="foto">Foto</label>
+                    <!-- Drag & Drop Zone -->
+                    <div id="drop-zone" class="drop-zone">
+                        <p>Arrastra y suelta una imagen aquí o haz clic para seleccionar</p>
+                    </div>
+                    <input type="file" id="foto" name="foto" accept="image/*" style="display: none;">
+                    <div id="file-name" style="margin-top: 5px; font-size: 0.9em; color: #666;"></div>
+                </div>
+                <button type="submit" class="btn">Guardar</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="js/app.js"></script>
+    <script>
+        // Check session
+        checkSession().then(loggedIn => {
+            if (!loggedIn) {
+                window.location.href = 'index.html';
+            } else {
+                loadStudents();
+                loadCareers();
+                loadQuote();
+                
+                // Load preference from LocalStorage
+                const lastSearch = localStorage.getItem('lastSearch');
+                if (lastSearch) {
+                    document.getElementById('searchInput').value = lastSearch;
+                    searchStudents();
+                }
+            }
+        });
+
+        document.getElementById('studentForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            saveStudent();
+        });
+    </script>
+</body>
+</html>
