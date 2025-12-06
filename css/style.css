@@ -139,7 +139,7 @@ table th {
     border-radius: 50%;
 }
 
-/* Drag & Drop Styles */
+/* Estilos Drag & Drop */
 .drop-zone {
     border: 2px dashed #ccc;
     border-radius: 4px;
@@ -161,7 +161,7 @@ table th {
     pointer-events: none; /* Evita problemas al arrastrar sobre el texto */
 }
 
-/* Quote API Styles */
+/* Estilos API de Frases */
 .quote-container {
     background: #fff;
     padding: 15px;
@@ -184,7 +184,7 @@ table th {
     color: #333;
 }
 
-/* Media Query for Print */
+/* Media Query para Impresión */
 @media print {
     header, .btn, .modal, #search-bar, #quote-box {
         display: none !important;
@@ -204,7 +204,7 @@ table th {
         color: #000;
     }
 
-    /* Hide Actions Column (Last column) */
+    /* Ocultar Columna de Acciones (Última columna) */
     .actions-col {
         display: none !important;
     }

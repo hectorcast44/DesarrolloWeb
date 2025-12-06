@@ -2,7 +2,7 @@
 $host = '127.0.0.1';
 $db   = 'sistema_escolar';
 $user = 'root';
-$pass = ''; // Default XAMPP password is empty
+$pass = ''; // La contraseña por defecto de XAMPP está vacía
 $charset = 'utf8mb4';
 
 $dsn = "mysql:host=$host;dbname=$db;charset=$charset";

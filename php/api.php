@@ -15,7 +15,7 @@ $action = $_GET['action'] ?? '';
 
 if ($method === 'GET') {
     if ($action === 'students') {
-        // Use the VIEW as requested
+        // Usar la VISTA como se solicitó
         $stmt = $pdo->query("SELECT * FROM vista_alumnos_info");
         echo json_encode($stmt->fetchAll());
     } elseif ($action === 'careers') {
@@ -43,7 +43,7 @@ if ($method === 'GET') {
             if (move_uploaded_file($_FILES['foto']['tmp_name'], $uploadDir . $fileName)) {
                 $fotoPath = 'uploads/' . $fileName;
             } else {
-                // Debug: Failed to move file
+                // Depuración: Falló al mover el archivo
                 error_log("Failed to move uploaded file to $uploadDir$fileName");
                 echo json_encode(['success' => false, 'error' => 'Error al mover el archivo subido. Verifique permisos.']);
                 exit;
@@ -56,7 +56,7 @@ if ($method === 'GET') {
              }
         }
 
-        // Use Stored Procedure as requested
+        // Usar Procedimiento Almacenado como se solicitó
         try {
             $stmt = $pdo->prepare("CALL sp_crear_alumno(?, ?, ?, ?)");
             $stmt->execute([$nombre, $email, $carrera_id, $fotoPath]);
@@ -71,7 +71,7 @@ if ($method === 'GET') {
         $email = $_POST['email'];
         $carrera_id = $_POST['carrera_id'];
         
-        // Handle photo update if provided
+        // Manejar actualización de foto si se proporciona
         $sql = "UPDATE alumnos SET nombre=?, email=?, carrera_id=?";
         $params = [$nombre, $email, $carrera_id];
 
@@ -86,6 +86,7 @@ if ($method === 'GET') {
                 $sql .= ", foto=?";
                 $params[] = $fotoPath;
             } else {
+                 // Depuración: Falló al mover el archivo
                  error_log("Failed to move uploaded file to $uploadDir$fileName");
                  echo json_encode(['success' => false, 'error' => 'Error al mover el archivo subido.']);
                  exit;

@@ -22,7 +22,7 @@
     </header>
 
     <div class="container">
-        <!-- API 2: Quote of the Day -->
+        <!-- API 2: Frase del Día -->
         <div id="quote-box" class="quote-container" style="display: none;">
             <span id="quote-text" class="quote-text">Cargando frase...</span>
             <span id="quote-author" class="quote-author"></span>
@@ -49,7 +49,7 @@
                 </tr>
             </thead>
             <tbody>
-                <!-- Dynamic Content -->
+                <!-- Contenido Dinámico -->
             </tbody>
         </table>
     </div>
@@ -72,12 +72,12 @@
                 <div class="form-group">
                     <label for="carrera">Carrera</label>
                     <select id="carrera" name="carrera_id" required>
-                        <!-- Dynamic Options -->
+                        <!-- Opciones Dinámicas -->
                     </select>
                 </div>
                 <div class="form-group">
                     <label for="foto">Foto</label>
-                    <!-- Drag & Drop Zone -->
+                    <!-- Zona Drag & Drop -->
                     <div id="drop-zone" class="drop-zone">
                         <p>Arrastra y suelta una imagen aquí o haz clic para seleccionar</p>
                     </div>
@@ -91,7 +91,7 @@
 
     <script src="js/app.js"></script>
     <script>
-        // Check session
+        // Verificar sesión
         checkSession().then(loggedIn => {
             if (!loggedIn) {
                 window.location.href = 'index.html';
@@ -100,7 +100,7 @@
                 loadCareers();
                 loadQuote();
                 
-                // Load preference from LocalStorage
+                // Cargar preferencia de LocalStorage
                 const lastSearch = localStorage.getItem('lastSearch');
                 if (lastSearch) {
                     document.getElementById('searchInput').value = lastSearch;

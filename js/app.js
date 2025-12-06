@@ -60,7 +60,7 @@ async function loadCareers() {
         const response = await fetch(`${API_URL}?action=careers`);
         const careers = await response.json();
         const select = document.getElementById('carrera');
-        if (!select) return; // Guard clause if element doesn't exist (e.g. on login page)
+        if (!select) return; // Cláusula de guarda si el elemento no existe (ej. en la página de login)
         select.innerHTML = '<option value="">Seleccione una carrera</option>';
         careers.forEach(c => {
             const option = document.createElement('option');
@@ -75,7 +75,7 @@ async function loadCareers() {
 
 async function searchStudents() {
     const query = document.getElementById('searchInput').value;
-    localStorage.setItem('lastSearch', query); // LocalStorage requirement
+    localStorage.setItem('lastSearch', query); // Requisito de LocalStorage
 
     try {
         const response = await fetch(`${API_URL}?action=search&q=${encodeURIComponent(query)}`);
@@ -92,8 +92,8 @@ function renderTable(students) {
 
     students.forEach(student => {
         const tr = document.createElement('tr');
-        // API 1: UI Avatars fallback
-        // If no photo, generate one with initials
+        // API 1: Respaldo de UI Avatars
+        // Si no hay foto, generar una con iniciales
         const photoUrl = student.foto ? student.foto : `https://ui-avatars.com/api/?name=${encodeURIComponent(student.nombre)}&background=random&color=fff`;
         
         tr.innerHTML = `
@@ -117,7 +117,7 @@ async function saveStudent() {
     
     const action = id ? 'update' : 'create';
     
-    // Basic Validation
+    // Validación básica
     if (!formData.get('nombre') || !formData.get('email') || !formData.get('carrera_id')) {
         alert('Por favor complete todos los campos requeridos');
         return;
@@ -164,7 +164,7 @@ async function deleteStudent(id) {
     }
 }
 
-// Modal Helpers
+// Ayudantes del Modal
 function openModal() {
     document.getElementById('studentModal').style.display = 'block';
     document.getElementById('modalTitle').textContent = 'Agregar Alumno';
@@ -184,13 +184,13 @@ function editStudent(student) {
     document.getElementById('nombre').value = student.nombre;
     document.getElementById('email').value = student.email;
     
-    // Set the career ID directly
+    // Establecer el ID de la carrera directamente
     if (student.carrera_id) {
         document.getElementById('carrera').value = student.carrera_id;
     }
 }
 
-// Close modal if clicked outside
+// Cerrar modal si se hace clic fuera
 window.onclick = function(event) {
     const modal = document.getElementById('studentModal');
     if (event.target == modal) {
@@ -198,28 +198,28 @@ window.onclick = function(event) {
     }
 }
 
-// API 2: Quote of the Day
+// API 2: Frase del Día
 async function loadQuote() {
     try {
-        // Switching to dummyjson as quotable.io might be unstable
+        // Cambiando a dummyjson ya que quotable.io podría ser inestable
         const response = await fetch('https://dummyjson.com/quotes/random');
         if (!response.ok) throw new Error('Network response was not ok');
         const data = await response.json();
         
-        // dummyjson returns { quote: "...", author: "..." }
+        // dummyjson devuelve { quote: "...", author: "..." }
         document.getElementById('quote-text').textContent = `"${data.quote}"`;
         document.getElementById('quote-author').textContent = `- ${data.author}`;
         document.getElementById('quote-box').style.display = 'flex';
     } catch (error) {
         console.log('Could not fetch quote:', error);
-        // Fallback quote
+        // Frase de respaldo
         document.getElementById('quote-text').textContent = '"La educación es el arma más poderosa que puedes usar para cambiar el mundo."';
         document.getElementById('quote-author').textContent = '- Nelson Mandela';
         document.getElementById('quote-box').style.display = 'flex';
     }
 }
 
-// Drag & Drop Logic Setup (Call this if elements exist, e.g. in dashboard)
+// Configuración de lógica Drag & Drop (Llamar si existen los elementos, ej. en dashboard)
 function setupDragAndDrop() {
     const dropZone = document.getElementById('drop-zone');
     const fileInput = document.getElementById('foto');
@@ -259,5 +259,5 @@ function setupDragAndDrop() {
     }
 }
 
-// Initialize Drag & Drop when DOM is ready (or called from script in dashboard)
+// Inicializar Drag & Drop cuando el DOM esté listo (o llamado desde script en dashboard)
 document.addEventListener('DOMContentLoaded', setupDragAndDrop);

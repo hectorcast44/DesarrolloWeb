@@ -15,7 +15,7 @@ if ($action === 'login') {
     $stmt->execute([$username]);
     $user = $stmt->fetch();
 
-    // For this example, we are using the hash for 'admin123' inserted in schema.sql
+    // Para este ejemplo, usamos el hash para 'admin123' insertado en schema.sql
     // $2y$10$vI8aWBnW3fID.ZQ4/zo1G.q1lRps.9cGLcZEiGDMVr5yUP1KUOYTa
     if ($user && password_verify($password, $user['password'])) {
         $_SESSION['user_id'] = $user['id'];
